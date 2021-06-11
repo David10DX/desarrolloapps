@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo de Apps</title>
+    <style>
+        *{
+          box-sizing: border-box;
+          margin: 0px;
+          list-style:none;
+        } 
+        nav{
+          position: fixed;
+          background-color:black;
+          color:white;
+          height: 60px;       
+
+          text-align: right;
+          box-shadow: 0 0 10px red;
+          margin:0px;
+          width:100%;
+        } 
+        .imagen1{
+          float:right;
+          width: 90px;
+          height: auto;
+          margin-top: 0px;
+        }
+        .opciones{
+            display:none;
+        }
+        .navi a{
+            text-decoration: none;
+            color: white;
+        }
+        .navi2{
+            float:left;
+            background:transparent;
+            display:block;
+            border:1px solid transparent;
+            padding:15px 10px;
+            text-shadow: 0px 0px 15px white;
+            text-transform: uppercase;
+            font-size: 2vh;
+        }
+        .navi2 ul li{
+            float:right;
+            background:rgb(180, 57, 57);
+            display: block;
+            text-align: center;
+            border:1px solid transparent;
+            padding: 10px 10px;
+            text-shadow: 0px 0px 15px white;
+            text-transform: uppercase;
+            border-radius: 35px;
+            margin-top:5px;
+            width: 170px;
+            font-size:15px;
+        }
+        .navi2:hover {
+            background-color:white;
+            color:black;
+            text-shadow: 0px 0px 15px rgb(180, 57, 57);
+            border-radius: 35px;
+        }
+        .navi2:hover > a{
+            color:black;
+        }
+        .navi2 ul{
+            display:none;
+            position:absolute;
+            min-width:140px;
+        }
+        .navi2:hover > ul {
+            display:block;
+            margin-right:90px;
+            margin-top: 30px
+        }
+        .contacto2{
+            margin-left:auto;
+            margin-right: auto;
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 20px black;
+        }
+        .ima{
+            margin-left: auto;
+            margin-right: auto;
+          }
+        .ima img{
+            width:100%;
+            height:auto;
+        }    
+        .contacto2 p{
+            text-align: center;
+            font-size: 2vh;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold; 
+        } 
+        .titulo{
+            font-family:Arial, Helvetica, sans-serif;
+            color: rgb(138, 4, 4);
+            text-shadow: 0px 0px 15px black;
+            font-size: 40px;
+            padding-top:75px;
+            text-align: center;
+        }
+        .txt{
+            margin-top: 30px;
+            margin-left: 15px ;
+            margin-right: 15px;
+            color: #000000;
+            text-align: center;
+            font-size: 22px;
+            font-family: Berlin Sans FB;
+        }
+        .img{
+            float: right;
+            width: 200px;
+            height: auto;
+            margin-top: 0px;
+        }
+        .img2{
+            float: right;
+            width: 200px;
+            height: auto;
+            margin-top: 0px;
+        }
+        .div{
+            display: block;
+        }
+        .sub{
+            font-family: Berlin Sans FB;
+            text-align: center;
+            color: rgb(255, 0, 0);
+            font-size: 1.2em;  
+        }
+        .sub2{
+            font-family: Berlin Sans FB;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px;
+            left: 80px;
+            font-size: 1.5em;
+        }
+        .contenido1{
+            font-family: Berlin Sans FB;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .content{
+            font-family: Berlin Sans FB;
+            margin-top: 20px;
+            margin-left:15px ;
+            margin-right: 15px;
+            margin: 70px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 19px;
+        }
+        .imag{
+            float: right;
+            margin-top: 0px;
+            padding-top: 15px;
+        }
+        .titulo2{
+            font-family:Arial, Helvetica, sans-serif;
+            color: rgb(138, 4, 4);
+            text-shadow: 0px 0px 15px black;
+            text-align: center;
+            font-size: 1.9em;
+        }
+        .lista{
+           padding: 20px;
+           text-align: left;
+        }
+        .imagen{
+           position: relative;
+           left: 100px;         
+        }
+        .cuadro{
+            background-color: #E20D0D;
+        }
+        .descripcion{
+            font-family: Berlin Sans FB;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 22px;
+            color: white;
+            margin-left:15px ;
+            margin-right: 15px;
+        }
+        .content1{
+            font-family: Berlin Sans FB;
+            font-size: 20px;
+            text-align: center;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        .col-1{width: 8.33%;}
+        .col-2{width: 16.66%;}
+        .col-3{width: 25%;}
+        .col-4{width: 33.33%;}
+        .col-5{width: 41.66%;}
+        .col-6{width: 50%;}
+        .col-7{width: 58.33%;}
+        .col-8{width: 66.66%;}
+        .col-9{width: 75%;}
+        .col-10{width: 83.33%;}
+        .col-11{width: 91.66%;}
+        .col-12{width: 100%;}  
+        @media only screen and (min-width:668px){
+        .img{
+        width: 200px;
+        height: auto;
+        margin-top: 0px;
+        }
+          .col-m-1{width: 8.33%;}
+          .col-m-2{width: 16.66%;}
+          .col-m-3{width: 25%;}
+          .col-m-4{width: 33.33%;}
+          .col-m-5{width: 41.66%;}
+          .col-m-6{width: 50%;}
+          .col-m-7{width: 58.33%;}
+          .col-m-8{width: 66.66%;}
+          .col-m-9{width: 75%;}
+          .col-m-10{width: 83.33%;}
+          .col-m-11{width: 91.66%;}
+          .col-m-12{width: 100%;}  
+        }
+        @media only screen and (min-width:768px){
+            .img{
+            width: auto;
+            height: 300px;
+            margin-top: 0px;
+            }
+            nav{
+            position:fixed;
+            background-color:black;
+            color:white;
+            height: 70px;
+            text-align: right;
+            box-shadow: 0 0 10px red;
+          }
+          .opciones{
+            display:block
+          }
+          nav a{
+            text-decoration: none;
+            color: rgb(180, 57, 57);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            display: inline-block;
+            padding:25px 15px;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 15px white;
+          }
+          nav a:hover{
+            border-radius: 35px;
+            background-color: white;
+            color: black;
+            text-shadow: 0px 0px 15px rgb(180, 57, 57);
+          }  
+          .navi{
+            display:none;
+          }
+          .imagen1{
+            float:left;
+            width: 90px;
+            height: auto;
+            margin-top: 5px;
+          }
+          .contacto2{
+            margin-left:auto;
+            margin-right: auto;
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 20px black;
+          }
+          .ima{
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .ima img{
+            width:100%;
+            height:auto;
+          }
+          .contacto2 p{
+            text-align: center;
+            font-size: 2vh;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold; 
+          }
+          .col-g-1{width: 8.33%;}
+          .col-g-2{width: 16.66%;}
+          .col-g-3{width: 25%;}
+          .col-g-4{width: 33.33%;}
+          .col-g-5{width: 41.66%;}
+          .col-g-6{width: 50%;}
+          .col-g-7{width: 58.33%;}
+          .col-g-8{width: 66.66%;}
+          .col-g-9{width: 75%;}
+          .col-g-10{width: 83.33%;}
+          .col-g-11{width: 91.66%;}
+          .col-g-12{width: 100%;} 
+        }
+        @media only screen and (min-width:1200px){
+        .img{
+        width: auto;
+        height: 400px;
+        margin-top: 0px;
+        }
+        .img2{
+            float: right;
+            width: auto;
+            height: 550px;
+            margin-top: 0px;
+        }
+        .txt{
+            margin-top: 80px;
+            margin-left: 90px ;
+            margin-right: 15px;
+        }
+        .titulo2{
+            text-align: center;
+            margin: 0 auto;
+        }
+          .col-g-1{width: 8.33%;}
+          .col-g-2{width: 16.66%;}
+          .col-g-3{width: 25%;}
+          .col-g-4{width: 33.33%;}
+          .col-g-5{width: 41.66%;}
+          .col-g-6{width: 50%;}
+          .col-g-7{width: 58.33%;}
+          .col-g-8{width: 66.66%;}
+          .col-g-9{width: 75%;}
+          .col-g-10{width: 83.33%;}
+          .col-g-11{width: 91.66%;}
+          .col-g-12{width: 100%;} 
+        }
+    </style>
+</head>
+<body>
+    <nav class="col-12 col-m-12 col-g-12">
+        <img src="img/KePixel (1).png" class="imagen1">
+        <div class="opciones">
+          <a href="diseño-web.html">Tiendas/Paginas Online</a>
+          <a href="pag-contacto.html">Contacto</a>
+          <a href="index.html">Home</a>
+        </div>
+          <ul class="navi">
+            <li class="navi2"><a href="">¿Qué Necesita?</a>
+                <ul>
+                  <li class="navi3"><a href="diseño-web.html">Tiendas/Paginas Online</a><br></li>
+                  <li class="navi4"><a href="pag-contacto.html">Contacto</a><br></li>
+                  <li class="navi5"><a href="index.html">Home</a></li>
+                </ul>
+           </li>    
+    </nav>
+    <div>
+        <p class="titulo">Desarrollo de Aplicaciones y Webs a medida</p>
+    </div>
+    <div >
+        <img class="col-12 col-g-6 img" src="https://appdesign.dev/wp-content/uploads/2020/08/creacio%CC%81n-pa%CC%81gina-web-a-medida.jpg"/>
+    </div>
+    <div class="col-g-6 col-12">
+        <p class="txt">Desarrollo y creación de páginas web a medida. Basándose en las tecnologías web universales y estandarizadas, como HTML5, JavaScript y CSS, las aplicaciones web se implementan como un sitio web que simplemente se ve y se siente como aplicaciones nativas. Funcionan y se ejecutan en un navegador escrito típicamente en HTML5. Empresa para crear página web a medida sin plantillas. Disponemos de diseñadores web para personalizar el diseño de tu página web totalmente personalizada en Bootstrap. Páginas web construidas en HTML, CSS y JavaScript.</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <div class="col-g-12 col-12"> 
+        <p class="titulo2">¿Cómo desarrollar una página web a medida?</p>
+    </div>
+    <div>
+        <p class="sub col-g-12 col-12" >Agencia de Desarrollo web</p>
+    </div >
+    <div class= "col-g-12 col-12" >
+        <p class="contenido1"> App Design realiza diseño de páginas web a medida para empresas.</p>
+    </div>
+    <div class="col-g-4 col-12 imag" id="hola">
+        <img class="col-12" id="ee" src="https://appdesign.dev/wp-content/uploads/2020/08/disen%CC%83o-pa%CC%81ginas-web-a-medida.jpg" />
+    </div>
+    <div class="txt">Para diseñar una página web para mi empresa a medida y una aplicación móvil, necesitas una sistema multiplataforma. En nuestra empresa utilizamos Bootstrap, Ionic, React Native y Flutter, los mejores sistemas que existen actualmente para desarrolladores. Bootstrap facilitará el trabajo, con ella podrás construir los tres puntos claves para crear tu web:
+        <div class="lista">
+            <ol start="1" >
+                <li><p><strong>Estructura:</strong> necesitas una página en HTML, a ser posible html 5 para darle forma a la estructura de tu web.</p></li>
+                <li><p><strong>Estilos:</strong> las hojas de estilos, marcadas con css, visualizarán en diseño de tus páginas haciendo tu web más visual y atractiva.</p></li>
+                <li><p><strong>Funciones:</strong> la forma de interaccionar con el usuario tendrá que ir montado con los archivos de las funciones en javascript.</p></li>
+            </ol>
+        </div>
+        <p>Una vez tengas los tres puntos estudiados, solo falta enlazar cada una de las hojas.</p>
+    </div>
+    <center><div> 
+        <img class="col-g-9 col-9" src="https://appdesign.dev/wp-content/uploads/2020/08/disen%CC%83o-web-y-aplicaciones-a-medida.jpg" >
+    </div></center>
+    <br><br>
+    <div>
+        <p class="titulo2">Diseño web y apps personalizadas</p>
+    </div>
+    <div class="cuadro">
+        <div>
+            <p class="descripcion">Únicamente necesitamos conocer tu idea. Aquí no hay límite, al crear todo desde cero las posibilidades son infinitas. Te asignaremos a un equipo de diseño web con ux ui o aplicaciones totalmente a medida que estará en permanente contacto contigo para desarrollar tu proyecto personalizado totalmente a medida.</p>
+        </div>
+        <div >
+            <img class="col-12 col-g-6 img2" src="https://appdesign.dev/wp-content/uploads/2014/11/services-web-design.png"/>
+        </div>
+
+        <div class="col-g-6 col-12">
+            <p class="txt">Te asesoramos en todo momento ofreciéndote nuestro punto de vista como expertos en diseño web. Puedes comentarnos cualquier idea para darte nuestra visión de como adaptarla a tu web.<br><br>Cuéntanos tu idea y te prepararemos un boceto de tu web antes de comenzar.<br><br><strong>Presupuesto web a medida</strong><br><br>Servicio Técnico personalizado de programadores profesionales.<br><br>Tras la primera toma de contacto te asignaremos a un equipo profesional en diseño web a medida donde se pondrán en contacto con el cliente para concretar y desarrollar tu idea. Una vez estudiemos cada proyecto, te enviaremos el precio del presupuesto web detallado sin compromiso. Garantía del 100% de satisfacción en nuestros diseños a medida para todos los clientes ya que realizamos la propuesta antes de comenzar.</p>
+        </div>
+        <div>
+            <br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+    <div>
+        <p class="titulo2">Desarrollo de software a medida</p>
+    </div>
+    <br>
+    <div>
+        <p class="sub2">Desarrollo de software a medida</p><br>
+        <p class="content1">Sin plantillas ni prediseños. Como por ejemplo el diseño web para una clínica dental. Puedes ver una estimación del precio a través de nuestra calculadora de precios para páginas web.<br><br>Al crear tu web totalmente a medida desde cero asegurarás tu idea y el diseño personalizado único y exclusivo en internet, nadie tendrá el mismo diseño. Montamos todas las funciones actuales sin perder calidad, formularios de contacto, metaetiquetas y urls amigables para posicionamiento web, funciones específicas por el cliente…</p>
+    </div>
+    <br>
+    <div>
+        <p class="sub2">Diseño Página web a medida con Bootstrap</p><br>
+        <p class="content1">Nuestra experiencia y amplio equipo puede desarrollarte cualquier tipo de proyecto a medida, desde un diseño web corporativo, tienda online de productos y servicios, aplicación móvil con publicación en los diferentes canales hasta programación de Aplicaciones Web utilizando las tecnologías de Linux, Apache, MySql y Php. Siempre enriquecidas en el área de cliente con Javascript (Ajax, jQuery). <br><br>Código limpio, ligero y sin fallos, a diferencia de todos los CMS que se montan para empresas, dispondrás de el código más limpio y claro para buscadores. Optimizando mejor la web y dejando una relación contenido y código optimizada para SEO. Tu web cargará más rápido gracias la última tecnología de Bootstrap 5.</p>
+    </div>
+    <br><br><br>
+    <div class="col-12 col-m-12 col-g-12 contacto2">
+        <div class="col-3 col-m-12 col-g-2 ima">
+            <img class="col-g-4" src="img/KePixel (1).png">
+        </div>
+        <p>Agencia de Diseño Web, Desarrollo de Aplicaciones y Software<br><br>
+          📍La Ceiba - Comayagua - SPS<br><br>
+          info@appdesign.dev<br><br>
+        +504 9603-6528</p>
+    </div>
+</body>
+</html>
